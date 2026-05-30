@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Drawing Helper</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="controls">
+        <div id="controls-bar">
+          <label id="upload-btn" class="btn">
+            📷 Upload
+            <input type="file" id="image-input" accept="image/*" hidden />
+          </label>
+          <button id="camera-btn" class="btn">🎥 Camera</button>
+          <button id="invert-btn" class="btn btn-small hidden">
+            🌗 Invert
+          </button>
+          <button id="flip-btn" class="btn btn-small hidden">↔ Flip</button>
+          <button id="lock-btn" class="btn btn-small hidden">🔒 Lock</button>
+          <button id="fullscreen-btn" class="btn btn-small">⛶ Full</button>
+          <button id="toggle-controls-btn" class="btn btn-small hidden">
+            ▲ Less
+          </button>
+        </div>
+        <div id="controls-expanded" class="hidden">
+          <div id="opacity-control">
+            <label for="opacity-slider">Opacity</label>
+            <input
+              type="range"
+              id="opacity-slider"
+              min="0"
+              max="100"
+              value="50"
+            />
+            <span id="opacity-value">50%</span>
+          </div>
+          <div id="scale-control">
+            <label for="scale-slider">Size</label>
+            <input
+              type="range"
+              id="scale-slider"
+              min="10"
+              max="300"
+              value="100"
+            />
+            <span id="scale-value">100%</span>
+          </div>
+          <button id="reset-btn" class="btn btn-small">↺ Reset</button>
+        </div>
+      </div>
+
+      <div id="viewport">
+        <video id="camera" autoplay playsinline></video>
+        <img id="overlay-image" alt="" />
+        <p id="placeholder">Upload an image and start camera to begin</p>
+      </div>
+      <button id="fullscreen-restore">⛶ Show Controls</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
